@@ -1,0 +1,6 @@
+set recolor false
+set default-bg \#0D0D15
+set default-fg \#a0a8cd
+set guioptions none
+set filemonitor "signal"
+
