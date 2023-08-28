@@ -1,0 +1,35 @@
+set ratios 1:2:3
+set cleaner ~/.config/lf/lf_kitty_clean
+set previewer ~/.config/lf/lf_kitty_preview
+set icons true
+set hidden true
+set ignorecase true
+set info size
+
+# Unbind defaults
+map m
+map o
+map n
+map "'"
+map '"'
+map d
+map e
+map f
+map g
+
+map . set hidden!
+map dd delete
+map p paste
+map x cut
+map y copy
+map c clear
+map <enter> open
+map mf :push %touch<space>
+map md :push %mkdir<space>
+map r rename
+
+map gd cd ~/Downloads
+map gc cd ~/.config
+
+map o $nvim "$f"
+
