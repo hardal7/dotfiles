@@ -12,7 +12,7 @@ configuration {
   bg: #0D0D15;
   bg-selected: #1e1e2e;
 
-  fg: #cdd6f4;
+  fg: #a0a8cd;
 
   spacing: 0;
 }
