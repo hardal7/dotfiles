@@ -2,5 +2,5 @@
 
 setxkbmap tr
 picom -b
-kitty
+kitty &
 greenclip daemon
