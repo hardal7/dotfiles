@@ -16,9 +16,6 @@ unzip JetBrainsMono.zip -d /usr/share/fonts/JetBrainsMono
 echo -e "\033[0;31mInstalling icon theme...\033[0m"
 echo -e '[Icon Theme]\nInherits=Qogir' > /usr/share/icons/default/index.theme
 
-echo -e "\033[0;31mInstalling BetterDiscord...\033[0m"
-sudo -u hardal bash -c 'git clone https://github.com/BetterDiscord/BetterDiscord.git && cd BetterDiscord && npm install -g pnpm && pnpm install && pnpm build && cd'
-
 echo -e "\033[0;31mMoving dotfiles...\033[0m"
 mkdir dotfilesbackup && mv .config dotfilesbackup
 git clone https://github.com/hardal7/dotfiles .config 
@@ -26,7 +23,6 @@ mv .config/.xinitrc .xinitrc
 mv .config/chrome chrome
 
 echo -e "\033[0;31mFinalizing...\033[0m"
-rm -rf yay JetBrainsMono.zip go yay
 chmod +x ~/.config/qtile/startup.sh
 chmod +x ~/.config/qtile/battery_check.sh
 chmod +x ~/.config/lf/lf_kitty_{clean,preview}
@@ -37,5 +33,3 @@ sleep 3 && reboot
 #After install: 
 # alsamixer enable sound
 # move chrome folder
-# run discord and pnpm inject in BetterDiscord
-# spicetify backup apply && spicetify apply

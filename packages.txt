@@ -3,8 +3,6 @@ nano vim neovim
 neofetch bottom htop duf ncdu 
 fish lsd exa lf 
 wget mandoc unzip arch-install-scripts base-devel 
-ttf-dejavu xclip ripgrep zathura-pdf-poppler pistol-git spicetify-cli rofi-greenclip qogir-icon-theme ttf-times-new-roman
-vlc discord kitty firefox spotify-launcher zathura libreoffice-fresh
-ruby npm 
+ttf-dejavu xclip ripgrep zathura-pdf-poppler rofi-greenclip qogir-icon-theme ttf-times-new-roman
+vlc discord kitty firefox zathura libreoffice-fresh 
 autorandr qtile mypy xorg xorg-xinit xorg-fonts-misc picom-git xf86-video-ati
-texlive-latex texlive-binextra texlive-fontsrecommended
