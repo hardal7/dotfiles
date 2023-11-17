@@ -31,6 +31,7 @@ keys = [
     Key([mod, "control"], "j", lazy.layout.grow_down(),desc="Grow window down"),
     Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
 
+    Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config file"),
     Key([mod], "n", lazy.layout.reset(), desc="Reset all window sizes"),
     Key([mod], "f", lazy.window.toggle_fullscreen(), desc ="Toggle fullscreen"),
     

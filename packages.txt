@@ -1,8 +1,8 @@
 networkmanager acpi ufw brightnessctl alsa-utils pulseaudio-alsa playerctl dunst rofi flameshot 
-nano vim neovim 
+nano vim neovim
 neofetch bottom htop duf ncdu 
-fish lsd exa lf 
-wget mandoc unzip arch-install-scripts base-devel 
+tmux fish lsd exa lf 
+wget man-db unzip arch-install-scripts base-devel 
 ttf-dejavu xclip ripgrep zathura-pdf-poppler rofi-greenclip qogir-icon-theme ttf-times-new-roman
 vlc discord kitty firefox zathura libreoffice-fresh 
 autorandr qtile mypy xorg xorg-xinit xorg-fonts-misc picom-git xf86-video-ati

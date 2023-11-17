@@ -3,7 +3,8 @@ Repository for my dotfiles. 🐱
 
 Before running the script make sure you:
 - Installed Arch using the [arch installation guide](https://wiki.archlinux.org/title/Installation_guide)
-- Created an user account with sudo privileges
+- Created a user account with sudo privileges
+- Have fakeroot installed on your system
 
 Simply run:
 
