@@ -3,15 +3,17 @@ if status is-interactive
 end
 
 set fish_greeting
-
+if not set -q TMUX
+    set -g TMUX tmux new-session -d -s base
+    eval $TMUX
+    tmux attach-session -d -t base
+end
 
 alias vim "nvim"
 alias ls "lsd"
 alias la "lsd -A"
-alias gc "cd /home/hardal/.config/ && vim"
 alias img "kitty +kitten icat"
 alias kill-orphans "pacman -Qtdq | sudo pacman -Rns -"
-alias dotman='/usr/bin/git --git-dir=/home/hardal/.config/.cfg/ --work-tree=/home/hardal/.config/'
 
 function lsl
     exa --tree --level=2

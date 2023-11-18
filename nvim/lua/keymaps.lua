@@ -18,6 +18,9 @@ keymap("n", "<Leader>ff", ":Telescope find_files<Enter>", opts)
 keymap("n", "<Leader>fw", ":Telescope live_grep<Enter>", opts)
 keymap("n", "<Leader>gc", ":Telescope git_commits<Enter>", opts)
 keymap("n", "<Leader>gs", ":Telescope git_status<Enter>", opts)
+keymap("n", "<Leader>th", ":Telescope colorscheme<Enter>", opts)
 
--- Colorizer
+-- Plugins
 keymap("n", "<Leader>ct", ":ColorizerToggle<Enter>", opts)
+keymap("n", "<Leader>db", ":Dashboard<Enter>", opts)
+keymap("n", "<Leader>cc", ":CommentToggle<Enter>", opts)

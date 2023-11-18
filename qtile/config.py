@@ -7,7 +7,6 @@ import subprocess, os
 @hook.subscribe.startup_once
 def autostart():
     home = os.path.expanduser('~')
-    subprocess.Popen([home + '/.config/qtile/battery_check.sh'])
     subprocess.Popen([home + '/.config/qtile/startup.sh'])
 
 
@@ -96,18 +95,18 @@ screens = [
     Screen(
         wallpaper='~/.config/qtile/wallpaper.png',
         wallpaper_mode='fill',
-        top=bar.Bar(
-            [
-                widget.GroupBox(highlight_method = "text", fontsize = 16, urgen_border = "#00000000", this_current_screen_border = "#6F6FED"),
-                widget.Spacer(),
-                # widget.Mpris2(display_metadata = ['xesam:title', 'xesam:artist']),
-                widget.Spacer(),
-                widget.Clock(format = "%b %d, %H:%M", foreground = "#A0A8CD"),
-            ],
-            30,
-            margin = [10,10,0,10],
-            background="#0D0D15",
-        ),
+        #top=bar.Bar(
+            #[
+                #widget.GroupBox(highlight_method = "text", fontsize = 16, urgen_border = "#00000000", this_current_screen_border = "#6F6FED"),
+                #widget.Spacer(),
+                ## widget.Mpris2(display_metadata = ['xesam:title', 'xesam:artist']),
+                #widget.Spacer(),
+                #widget.Clock(format = "%b %d, %H:%M", foreground = "#A0A8CD"),
+            #],
+            #30,
+            #margin = [10,10,0,10],
+            #background="#0D0D15",
+        #),
     ),
 ]
 

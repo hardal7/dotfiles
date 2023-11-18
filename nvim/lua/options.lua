@@ -1,7 +1,8 @@
 local opt = vim.opt
 
--- Save file state
+-- Save file state & clipboard
 opt.undofile = true
+opt.clipboard = "unnamedplus"
 
 -- Colors
 opt.termguicolors = true
