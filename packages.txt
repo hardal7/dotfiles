@@ -1,7 +1,33 @@
-networkmanager acpi ufw brightnessctl alsa-utils pulseaudio-alsa playerctl dunst rofi flameshot 
-neofetch bottom htop duf ncdu 
-neovim tmux fish lsd exa lf  
-wget man-db unzip arch-install-scripts base-devel 
-ttf-dejavu ttf-jetbrains-mono-nerd xclip ripgrep zathura-pdf-poppler rofi-greenclip qogir-icon-theme ttf-times-new-roman 
-vlc discord kitty firefox zathura libreoffice-fresh 
-autorandr qtile mypy xorg xorg-xinit xorg-fonts-misc picom-git xf86-video-ati
+base-devel
+networkmanager
+acpi
+ufw
+hyprland
+dunst
+flameshot
+diodon
+alsa-utils
+neofetch
+bottom
+htop
+duf
+ncdu
+neovim
+tmux
+fish
+lsd
+fd
+lf
+fzf
+man-db
+unzip
+ttf-jetbrains-mono-nerd
+ttf-times-new-roman
+qogir-icon-theme
+ripgrep
+zathura-pdf-poppler
+discord
+kitty
+firefox
+zathura
+libreoffice-fresh
