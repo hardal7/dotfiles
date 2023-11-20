@@ -11,7 +11,8 @@ local plugins = {
 
   {
     --"EdenEast/nightfox.nvim"
-    "Shatur/neovim-ayu"
+    --"Shatur/neovim-ayu"
+    "folke/tokyonight.nvim"
   },
 
   {
@@ -69,10 +70,5 @@ require('mason').setup()
 require('nvim_comment').setup()
 require('ibl').setup{exclude={filetypes={"dashboard"},}}
 require('colorizer').setup()
-require('ayu').setup({
-  overrides = {
-    Normal = { bg = "#0d0d15" }
-  }
-})
-
-vim.cmd("colorscheme ayu")
+require("tokyonight").setup({transparent=true})
+vim.cmd("colorscheme tokyonight-night")

@@ -2,12 +2,7 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-function fish_greeting
-  set -Ux FZF_DEFAULT_OPTS "\
---color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
---color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
---color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
-end
+set fish_greeting
 
 if not set -q TMUX
     set -g TMUX tmux new-session -d -s base
@@ -19,14 +14,9 @@ alias vim "nvim"
 alias vf "fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
 # alias sd "loc=$(fd --type d | fzf-tmux -p --reverse) && cd $loc"
 alias ls "lsd"
-alias la "lsd -A"
 alias img "kitty +kitten icat"
 alias kill-orphans "pacman -Qtdq | sudo pacman -Rns -"
-
-function tx
-    kitty --title "latex" sh -c "latexmk -pdf -pvc $argv.tex" & && vim $argv.tex
-end
-
+alias fetch "clear && rxfetch"
 
 function sudo 
     if test "$argv" = !!
