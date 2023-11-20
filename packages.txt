@@ -1,13 +1,15 @@
 base-devel
 networkmanager
+playerctl
 acpi
 ufw
 hyprland
+swaybg
 dunst
 flameshot
-diodon
 alsa-utils
-neofetch
+asoundconf
+rxfetch
 bottom
 htop
 duf
@@ -23,6 +25,7 @@ man-db
 unzip
 ttf-jetbrains-mono-nerd
 ttf-times-new-roman
+ttf-dejavu
 qogir-icon-theme
 ripgrep
 zathura-pdf-poppler

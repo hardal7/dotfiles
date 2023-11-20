@@ -81,6 +81,9 @@
   }
 }
 
+/* Hide tabs*/
+/* #titlebar {display: none !important;} */
+
 /*
 toolkit.legacyUserProfileCustomizations.stylesheets
 browser.tabs.closeWindowWithLastTab

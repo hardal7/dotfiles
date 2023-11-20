@@ -4,7 +4,7 @@ Repository for my dotfiles. 🐱
 Before running the script make sure you:
 - Installed Arch using the [arch installation guide](https://wiki.archlinux.org/title/Installation_guide)
 - Created a user account with sudo privileges
-- Have fakeroot and a graphics driver installed on your system
+- Have fakeroot and a video driver installed on your system
 
 Simply run:
 
