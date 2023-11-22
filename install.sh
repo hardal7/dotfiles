@@ -14,7 +14,6 @@ echo -e '[Icon Theme]\nInherits=Qogir' > /usr/share/icons/default/index.theme
 
 echo -e "\033[0;31mMoving dotfiles...\033[0m"
 git clone https://github.com/hardal7/dotfiles ~/.config 
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 echo -e "\033[0;31mRebooting system...\033[0m"
 sleep 3 && reboot

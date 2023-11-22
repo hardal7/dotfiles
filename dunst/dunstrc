@@ -1,8 +1,9 @@
 [global]
-    width = 175
-    height = 175
+    width = 150
+    height = 150
     padding = 10
-    frame_width = 0
+    frame_width = 1
+    corner_radius = 6
     font = Jetbrains Mono 8
     alignment = left
     

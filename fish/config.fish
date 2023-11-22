@@ -2,17 +2,27 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-set fish_greeting
+function fish_greeting
+  tmux source ~/.config/tmux/tmux.conf
+end
 
 if not set -q TMUX
     set -g TMUX tmux new-session -d -s base
     eval $TMUX
+    tmux rename-window -t 1 'Shell'
+    tmux send-keys -t 'Shell' 'clear && rxfetch' C-m
+    tmux new-window -t base:2 -n 'Editor'
+    tmux send-keys -t 'Editor' 'nvim' C-m
+    tmux new-window -t base:3 -n 'Monitor'
+    tmux send-keys -t 'Monitor' 'btm' C-m
+    tmux split-window -h -c 2
+    tmux resize-pane -R 15
+    tmux send-keys -t 'Monitor' 'htop' C-m
+    tmux select-window -t :1
     tmux attach-session -d -t base
 end
 
 alias vim "nvim"
-alias vf "fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
-# alias sd "loc=$(fd --type d | fzf-tmux -p --reverse) && cd $loc"
 alias ls "lsd"
 alias img "kitty +kitten icat"
 alias kill-orphans "pacman -Qtdq | sudo pacman -Rns -"
