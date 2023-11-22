@@ -1,8 +1,9 @@
 local opt = vim.opt
 
--- Save file state & clipboard
+-- Save file, clipboard, change directory
 opt.undofile = true
 opt.clipboard = "unnamedplus"
+opt.autochdir = true
 
 -- Colors
 opt.termguicolors = true

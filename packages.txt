@@ -18,11 +18,10 @@ neovim
 tmux
 fish
 lsd
-fd
 lf
-fzf
 man-db
 unzip
+npm
 ttf-jetbrains-mono-nerd
 ttf-times-new-roman
 ttf-dejavu
