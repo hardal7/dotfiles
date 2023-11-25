@@ -1,0 +1,60 @@
+configuration {
+  display-drun: "";
+  drun-display-format: "{name}";
+  font: "JetBrains Mono 10";
+  icon-theme: "Qogir";
+  show-icons: true;
+}
+
+@theme "/dev/null"
+
+* {
+  bg: #0D0D15;
+  bg-selected: #1e1e2e;
+
+  fg: #a0a8cd;
+
+  spacing: 0;
+}
+
+window {
+  width: 30%;
+  background-color: @bg;
+}
+
+element {
+  padding: 8;
+  background-color: transparent;
+  text-color: @fg;
+}
+
+element selected {
+  text-color: @fg;
+  background-color: @bg-selected;
+}
+
+element-text {
+  background-color: transparent;
+  text-color: @fg;
+}
+
+element-icon {
+  size: 16;
+  padding: 0 5 0 0;
+  background-color: transparent;
+}
+
+inputbar {
+  enabled: false;
+}
+
+listview {
+  background-color: @bg;
+  columns: 1;
+  lines: 7;
+}
+
+mainbox {
+  background-color: @bg;
+}
+

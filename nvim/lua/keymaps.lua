@@ -19,6 +19,7 @@ keymap("n", "<Leader>fw", ":Telescope live_grep<Enter>", opts)
 keymap("n", "<Leader>gc", ":Telescope git_commits<Enter>", opts)
 keymap("n", "<Leader>gs", ":Telescope git_status<Enter>", opts)
 keymap("n", "<Leader>th", ":Telescope colorscheme<Enter>", opts)
+keymap("n", "<Leader>er", ":Telescope diagnostics<Enter>", opts)
 
 -- Plugins
 keymap("n", "<Leader>ct", ":ColorizerToggle<Enter>", opts)
