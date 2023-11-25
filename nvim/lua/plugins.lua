@@ -3,7 +3,7 @@ local plugins = {
   "terrortylor/nvim-comment",
   "folke/tokyonight.nvim",
   "norcalli/nvim-colorizer.lua",
-  "onsails/lspkind.nvim",
+  "lewis6991/gitsigns.nvim",
 
   {
     "lukas-reineke/indent-blankline.nvim",
@@ -17,7 +17,7 @@ local plugins = {
   },
 
   {
-    "nvim-telescope/telescope.nvim", 
+    "nvim-telescope/telescope.nvim",
     tag='0.1.4',
     dependencies = {'nvim-lua/plenary.nvim', 'nvim-tree/nvim-web-devicons'}
   },
@@ -29,11 +29,11 @@ local plugins = {
       require('dashboard').setup {config={
         footer={
           "                               ",
-          "You are what you repeatedly do."}, 
+          "You are what you repeatedly do."},
         header={
-          "     ██╗  ██╗ █████╗ ██████╗ ██████╗  █████╗ ██╗     ",     
-          "     ██║  ██║██╔══██╗██╔══██╗██╔══██╗██╔══██╗██║     ",  
-          "     ███████║███████║██████╔╝██║  ██║███████║██║     ",    
+          "     ██╗  ██╗ █████╗ ██████╗ ██████╗  █████╗ ██╗     ",
+          "     ██║  ██║██╔══██╗██╔══██╗██╔══██╗██╔══██╗██║     ",
+          "     ███████║███████║██████╔╝██║  ██║███████║██║     ",
           "     ██╔══██║██╔══██║██╔══██╗██║  ██║██╔══██║██║     ",
           "     ██║  ██║██║  ██║██║  ██║██████╔╝██║  ██║███████╗",
           "     ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝╚══════╝",
@@ -42,8 +42,7 @@ local plugins = {
           {desc = '󰊳 Update', group = '@string', action = 'Lazy sync', key = 'u' },
           {desc = ' Dotfiles', group = '@property', action = 'Telescope find_files cwd=~/.config', key = 'd'},
           {desc = '󰈔 New file', group = '@string', action = 'enew', key = 'n'},
-    			{desc = '   Mason ', group = '@property', action = 'Mason', key = 'm'},
-			    {desc = '  Quit', group = '@macro', action = 'q!', key = 'q'}
+			    {desc = ' Quit', group = '@macro', action = 'q!', key = 'q'}
         },
         project = { enable = false}
       }
@@ -60,7 +59,8 @@ local plugins = {
 
       {'hrsh7th/nvim-cmp'},
       {'hrsh7th/cmp-nvim-lsp'},
-      {'L3MON4D3/LuaSnip'}
+      {'L3MON4D3/LuaSnip'},
+      {"onsails/lspkind.nvim"},
     }
   }
 }
@@ -68,10 +68,22 @@ local plugins = {
 require('lazy').setup(plugins)
 require('nvim_comment').setup()
 require('ibl').setup{exclude={filetypes={"dashboard"},}}
+require('gitsigns').setup {
+  signs = {
+    add          = { text = '│' },
+    change       = { text = '│' },
+    delete       = { text = '_' },
+    topdelete    = { text = '‾' },
+    changedelete = { text = '~' },
+    untracked    = { text = '┆' },
+  },
+  current_line_blame = true,
+  current_line_blame_opts = {delay = 500}
+}
 require('colorizer').setup()
 
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = {"bash", "c", "cpp"},
+  ensure_installed = {"bash", "c", "cpp", "lua"},
   highlight = {enable = true}
 }
 local lsp_zero = require('lsp-zero')
@@ -81,28 +93,15 @@ end)
 require('mason').setup()
 require('mason-lspconfig').setup({
   handlers = {lsp_zero.default_setup},
-  ensure_installed = {"clangd"},
+  ensure_installed = {"clangd", "bashls", "lua_ls"},
+
 })
+
 local cmp = require('cmp')
-local cmp_action = require('lsp-zero').cmp_action()
-require('cmp').setup {
-  preselect = 'item',
-  completion = {
-    completeopt = 'menu,menuone,noinsert'
-  },
-  window = {
-    scrollbar = false,
-    completion = cmp.config.window.bordered(),
-    documentation = cmp.config.window.bordered()
-  },
-  mapping = cmp.mapping.preset.insert({
+local cmp_mappings = {
     ['<S-CR>'] = cmp.mapping.confirm({select = false}),
     ['<C-Space>'] = cmp.mapping.complete(),
     ["<C-e>"] = cmp.mapping.close(),
-    ['<C-f>'] = cmp_action.luasnip_jump_forward(),
-    ['<C-b>'] = cmp_action.luasnip_jump_backward(),
-    ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-d>'] = cmp.mapping.scroll_docs(4),
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -111,10 +110,7 @@ require('cmp').setup {
       else
         fallback()
       end
-    end, {
-      "i",
-      "s",
-    }),
+    end, {"i", "s",}),
     ["<S-Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
@@ -123,11 +119,14 @@ require('cmp').setup {
       else
         fallback()
       end
-    end, {
-      "i",
-      "s",
-    }),
-  }),
+    end, {"i","s"})
+};
+
+cmp_mappings['<Up>'] = vim.NIL
+cmp_mappings['<Down>'] = vim.NIL
+
+cmp.setup({
+  window = {completion = {scrollbar = false}},  
   formatting = {
     format = require('lspkind').cmp_format({
       mode = 'symbol_text',
@@ -136,8 +135,9 @@ require('cmp').setup {
         return vim_item
       end
     })
-  }
-}
+  },
+  mapping = cmp_mappings
+})
 
 
 require('tokyonight').setup({transparent=true})
