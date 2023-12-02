@@ -1,10 +1,11 @@
 base-devel
-playerctl
 acpi
 ufw
+mesa
 hyprland
 swaybg
 dunst
+playerctl
 grim
 slurp
 cliphist
