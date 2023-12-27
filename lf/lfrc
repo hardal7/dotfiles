@@ -1,6 +1,4 @@
 set ratios 1:2:3
-set cleaner ~/.config/lf/lf_kitty_clean
-set previewer ~/.config/lf/lf_kitty_preview
 set icons true
 set hidden true
 set ignorecase true
@@ -16,6 +14,7 @@ map d
 map e
 map f
 map g
+map z
 
 map . set hidden!
 map dd delete
@@ -32,4 +31,5 @@ map gd cd ~/Downloads
 map gc cd ~/.config
 
 map o $nvim "$f"
+map z $zathura "$f"
 
