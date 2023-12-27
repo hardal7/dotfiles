@@ -6,5 +6,5 @@ while true; do
         notify-send "Low Battery" "Battery level is $battery_level%"
     fi
     
-    sleep 2
+    sleep 60
 done

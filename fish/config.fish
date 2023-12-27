@@ -24,6 +24,7 @@ end
 
 alias vim "nvim"
 alias ls "lsd"
+alias pdf "libreoffice --headless --convert-to pdf"
 alias img "kitty +kitten icat"
 alias kill-orphans "pacman -Qtdq | sudo pacman -Rns -"
 alias fetch "clear && rxfetch"
