@@ -12,6 +12,10 @@ cliphist
 alsa-utils
 asoundconf
 pulseaudio-alsa
+mpd
+ncmpcpp
+sptlrx
+cava
 rxfetch
 bottom
 htop

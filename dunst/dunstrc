@@ -19,3 +19,5 @@
 [urgency_critical]
     background = "#0D0D15"
     foreground = "#a0a8cd"
+
+idle_threshold = 3

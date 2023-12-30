@@ -1,0 +1,10 @@
+[general]
+bars = 30
+bar_width = 2
+sensitivity = 75
+
+[color]
+foreground = blue
+
+[smoothing]
+noise_reduction = 90
