@@ -4,6 +4,7 @@ local utils = require "core.utils"
 M.blankline = {
   indentLine_enabled = 1,
   filetype_exclude = {
+    "dashboard",
     "help",
     "terminal",
     "lazy",

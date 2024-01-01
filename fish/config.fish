@@ -16,9 +16,11 @@ if not set -q TMUX
     tmux send-keys -t 'Editor' 'nvim' C-m
 
     tmux new-window -t base:3 -n 'Monitor'
-    tmux send-keys -t 'Monitor' 'btm' C-m
+    tmux send-keys -t 'Monitor' 'btop' C-m
     tmux split-window -h -c 2
     tmux resize-pane -R 15
+    tmux send-keys -t 'Monitor' 'btm' C-m
+    tmux split-window -v -c 2
     tmux send-keys -t 'Monitor' 'htop' C-m
 
     tmux new-window -t base:4 -n 'Music'
@@ -29,7 +31,12 @@ if not set -q TMUX
     tmux send-keys -t 'Music' 'cava' C-m
     tmux select-pane -t 1
     tmux split-window -v -c 2
-    tmux send-keys -t 'Music' 'sptlrx --current "bold" --before "104,faint,italic" --after "104,faint"' C-m
+    tmux send-keys -t 'Music' 'sptlrx' C-m
+
+    tmux new-window -t base:5 -n 'Message'
+    tmux send-keys -t 'Message' 'irssi' C-m
+    tmux split-window -h -c 2
+    tmux send-keys -t 'Message' 'aerc' C-m
 
     tmux select-window -t 1
     tmux attach-session -d -t base
@@ -52,7 +59,9 @@ function sudo
 end
 
 function theme
+  ~/.tmux/plugins/tpm/bin/update_plugins all > /dev/null 2>&1
   cp ~/.config/kitty/themes/$argv.conf ~/.config/kitty/theme.conf
   pkill -USR1 kitty
+  fish
 end
 

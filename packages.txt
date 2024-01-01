@@ -13,11 +13,15 @@ alsa-utils
 asoundconf
 pulseaudio-alsa
 mpd
+mpdris2
+aerc
 ncmpcpp
 sptlrx
 cava
+irssi
 rxfetch
 bottom
+btop
 htop
 duf
 ncdu
