@@ -22,7 +22,6 @@ current_item_inactive_column_prefix = $(green)$r
 current_item_inactive_column_suffix = $/r$(end)
 browser_playlist_prefix = "$5playlist$9 "
 song_columns_list_format = (50)[green]{ar} (50)[blue]{t}
-execute_on_song_change = notify-send "󰝚 Now Playing" "$(mpc --format '%title%' current)"
 browser_display_mode = columns
 search_engine_display_mode = columns
 volume_change_step = 5

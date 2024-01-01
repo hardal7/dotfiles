@@ -5,11 +5,11 @@ local M = {}
 local highlights = require "custom.highlights"
 
 M.ui = {
-  theme = "tokyodark",
+  theme = "jellybeans",
   theme_toggle = { "onedark", "one_light" },
 
   hl_override = {
-    tokyodark = {bg = "#0d0d15"}
+    jellybeans = {bg = "#0d0d15"}
   },
   hl_add = highlights.add,
 }
