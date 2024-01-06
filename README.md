@@ -8,7 +8,7 @@ Before running the script make sure you:
 
 Simply run:
 
-    git clone https://github.com/hardal7/dotfiles
+    git clone https://github.com/hardal7/dotfiles .config
     cd dotfiles
     chmod +x install.sh
     sudo ./install.sh

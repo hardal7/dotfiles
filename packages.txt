@@ -1,5 +1,6 @@
 base-devel
 acpi
+brightnessctl
 ufw
 mesa
 hyprland
