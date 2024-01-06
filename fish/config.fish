@@ -28,6 +28,7 @@ if not set -q TMUX
     tmux split-window -h -c 2
     tmux send-keys -t 'Music' 'alsamixer -c 1' C-m
     tmux split-window -v -c 2
+    tmux send-keys -t 'Music' 'pkill pulseaudio && pulseaudio &' C-m
     tmux send-keys -t 'Music' 'cava' C-m
     tmux select-pane -t 1
     tmux split-window -v -c 2

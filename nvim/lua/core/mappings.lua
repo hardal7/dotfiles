@@ -24,7 +24,7 @@ M.general = {
     ["<C-k>"] = { "<C-w>k", "Window up" },
 
     -- save
-    ["<C-w>"] = { "<cmd> w! | Dashboard <CR>", "Dashboard" },
+    ["<C-s>"] = { "<cmd> w! | Dashboard <CR>", "Dashboard" },
 
     -- Copy all
     ["<C-c>"] = { "<cmd> %y+ <CR>", "Copy whole file" },
@@ -46,7 +46,7 @@ M.general = {
     ["<leader>b"] = { "<cmd> enew <CR>", "New buffer" },
     ["<leader>ch"] = { "<cmd> NvCheatsheet <CR>", "Mapping cheatsheet" },
 
-    ["<C-s>"] = {
+    ["<C-w>"] = {
       function()
         vim.lsp.buf.format { async = true }
         vim.cmd.normal("w")
