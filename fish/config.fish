@@ -6,7 +6,7 @@ function fish_greeting
   tmux source ~/.config/tmux/tmux.conf
 end
 
-if not set -q TMUX
+if not pgrep -f tmux > /dev/null
     set -g TMUX tmux new-session -d -s base
     eval $TMUX
     tmux rename-window -t 1 'Shell'
@@ -28,7 +28,9 @@ if not set -q TMUX
     tmux split-window -h -c 2
     tmux send-keys -t 'Music' 'alsamixer -c 1' C-m
     tmux split-window -v -c 2
-    tmux send-keys -t 'Music' 'pkill pulseaudio && pulseaudio &' C-m
+    if not pgrep -f pulseaudio > /dev/null
+          tmux send-keys -t 'Music' 'cava' C-m
+    end
     tmux send-keys -t 'Music' 'cava' C-m
     tmux select-pane -t 1
     tmux split-window -v -c 2
@@ -40,6 +42,8 @@ if not set -q TMUX
     tmux send-keys -t 'Message' 'aerc' C-m
 
     tmux select-window -t 1
+    tmux attach-session -d -t base
+  else
     tmux attach-session -d -t base
 end
 
