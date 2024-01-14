@@ -47,3 +47,4 @@ kitty
 firefox
 zathura
 libreoffice-fresh
+obsidian
