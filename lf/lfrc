@@ -1,6 +1,6 @@
 set ratios 1:2:3
 set icons true
-set hidden true
+set hidden false
 set ignorecase true
 set info size
 
