@@ -46,7 +46,7 @@ M.general = {
     ["<leader>b"] = { "<cmd> enew <CR>", "New buffer" },
     ["<leader>ch"] = { "<cmd> NvCheatsheet <CR>", "Mapping cheatsheet" },
 
-    ["<C-w>"] = {
+    ["<C-e>"] = {
       function()
         vim.lsp.buf.format { async = true }
         vim.cmd.normal("w")
