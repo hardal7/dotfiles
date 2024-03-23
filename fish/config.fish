@@ -9,7 +9,7 @@ end
 if not pgrep -f tmux > /dev/null
     tmux new-session -d -s base
     tmux rename-window -t 1 'Shell'
-    tmux send-keys -t 'Shell' 'clear && rxfetch' C-m
+    #tmux send-keys -t 'Shell' 'clear && rxfetch' C-m
 
     tmux new-window -t base:2 -n 'Editor'
     tmux send-keys -t 'Editor' 'cd Projects' C-m
@@ -28,6 +28,7 @@ end
 
 alias vim "nvim"
 alias ls "lsd"
+alias zathura "zathura -l error"
 alias pdf "libreoffice --headless --convert-to pdf"
 alias img "kitty +kitten icat"
 alias kill-orphans "pacman -Qtdq | sudo pacman -Rns -"
