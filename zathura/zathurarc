@@ -3,6 +3,6 @@ set page-padding 0
 set guioptions none
 set filemonitor "signal"
 
-set default-bg 			          "#0D0D15"
+set default-bg 			          "#101010"
 set recolor-lightcolor		    "#101010"
 set recolor-darkcolor		      "#F0F0F0"

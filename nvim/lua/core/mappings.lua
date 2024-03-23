@@ -26,6 +26,9 @@ M.general = {
     -- save
     ["<C-s>"] = { "<cmd> w! | Dashboard <CR>", "Dashboard" },
 
+    -- Toggle colorizer
+    ["<C-t>"] = { "<cmd> ColorizerToggle <CR>", "ColorizerToggle" },
+
     -- Copy all
     ["<C-c>"] = { "<cmd> %y+ <CR>", "Copy whole file" },
 
