@@ -37,6 +37,7 @@ cmake
 wget
 npm
 ripgrep
+fzf
 ttf-jetbrains-mono-nerd
 ttf-times-new-roman
 ttf-dejavu

@@ -20,7 +20,7 @@ M.mason = {
     "lua-language-server",
     "bash-language-server",
     "clangd",
-    "clang-format"
+    "clang-format",
   },
 }
 
