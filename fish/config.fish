@@ -2,8 +2,15 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+if status is-interactive
+  export GEM_HOME=$HOME/.gem
+  export GEM_PATH=$HOME/.gem
+  fish_add_path $HOME/.gem/ruby/3.0.0/bin
+end
+
 function fish_greeting
   tmux source ~/.config/tmux/tmux.conf
+  #set -g CHROME_EXECUTABLE /usr/bin/chromium
 end
 
 if not pgrep -f tmux > /dev/null
@@ -27,6 +34,7 @@ end
 
 
 alias vim "nvim"
+#alias fim "nvim $(fzf --preview='cat {}')"
 alias ls "lsd"
 alias zathura "zathura -l error"
 alias pdf "libreoffice --headless --convert-to pdf"
@@ -34,6 +42,10 @@ alias img "kitty +kitten icat"
 alias kill-orphans "pacman -Qtdq | sudo pacman -Rns -"
 alias fetch "clear && rxfetch"
 alias ws "~/.config/fish/workspace.fish"
+alias ib "cd /home/shared/ib/"
+alias als "alsamixer -c 1"
+alias um "umount -R /mnt"
+alias lstheme "ls ~/.config/kitty/themes"
 
 function sudo 
     if test "$argv" = !!
@@ -51,3 +63,5 @@ function theme
   fish
 end
 
+
+fish_add_path /home/hardal/.spicetify
