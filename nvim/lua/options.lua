@@ -20,9 +20,15 @@ opt.showmode = false
 opt.laststatus = 0
 opt.ruler = false
 vim.wo.fillchars='eob: '
+
 opt.signcolumn = 'no'
 
 -- Search settings
 opt.incsearch = true
 opt.ignorecase = true
 opt.hlsearch = false
+
+-- Hide errors
+vim.diagnostic.config({
+  virtual_text = false,
+})

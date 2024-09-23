@@ -1,9 +1,40 @@
+local cmp_kinds = {
+  Text = '  ',
+  Method = '  ',
+  Function = '  ',
+  Constructor = '  ',
+  Field = '  ',
+  Variable = '  ',
+  Class = '  ',
+  Interface = '  ',
+  Module = '  ',
+  Property = '  ',
+  Unit = '  ',
+  Value = '  ',
+  Enum = '  ',
+  Keyword = '  ',
+  Snippet = '  ',
+  Color = '  ',
+  File = '  ',
+  Reference = '  ',
+  Folder = '  ',
+  EnumMember = '  ',
+  Constant = '  ',
+  Struct = '  ',
+  Event = '  ',
+  Operator = '  ',
+  TypeParameter = '  ',
+}
+
 local plugins = {
   "nvim-treesitter/nvim-treesitter",
   "terrortylor/nvim-comment",
-  "nyoom-engineering/oxocarbon.nvim",
+  "Dich0tomy/oxocarbon-lua.nvim",
   "norcalli/nvim-colorizer.lua",
   "onsails/lspkind.nvim",
+  "lewis6991/gitsigns.nvim",
+  "airblade/vim-rooter",
+  "akinsho/bufferline.nvim",
 
   {
     "lukas-reineke/indent-blankline.nvim",
@@ -80,22 +111,29 @@ end)
 require('mason').setup()
 require('mason-lspconfig').setup({
   handlers = {lsp_zero.default_setup},
-  ensure_installed = {"clangd", "bashls", "cssls", "dockerls", "gopls", "pyre", "ruby_lsp", "lua_ls", "sqls"},
+  ensure_installed = {"clangd", "bashls", "cssls", "html", "dockerls", "gopls", "pylsp", "ruby_lsp", "lua_ls", "sqls"},
+  -- settings = { gopls = {completeUnimported = true }}
 })
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
 require('cmp').setup {
+  formatting = {
+    format = function(_, vim_item)
+      vim_item.kind = (cmp_kinds[vim_item.kind] or '') .. vim_item.kind
+      return vim_item
+    end,
+  },
   preselect = 'item',
   completion = {
     completeopt = 'menu,menuone,noinsert'
   },
   window = {
-    scrollbar = false,
-    completion = cmp.config.window.bordered(),
-    documentation = cmp.config.window.bordered()
+    completion = {
+      scrollbar = false,
+    },
   },
   mapping = cmp.mapping.preset.insert({
-    ['<S-CR>'] = cmp.mapping.confirm({select = false}),
+    ['<C-a>'] = cmp.mapping.confirm({select = false}),
     ['<C-Space>'] = cmp.mapping.complete(),
     ["<C-e>"] = cmp.mapping.close(),
     ['<C-f>'] = cmp_action.luasnip_jump_forward(),
@@ -127,21 +165,29 @@ require('cmp').setup {
       "s",
     }),
   }),
-  formatting = {
-    format = require('lspkind').cmp_format({
-      mode = 'symbol_text',
-      maxwidth = 50,
-      before = function (entry, vim_item)
-        return vim_item
-      end
-    })
-  }
 }
 
-vim.diagnostic.config({
-  virtual_text = false,
+require('telescope').setup({
+  defaults = {
+    layout_config = {
+      vertical = { width = 0.2 }
+      -- other layout configuration here
+    },
+    -- other defaults configuration here
+  },
+  -- other configuration values here
 })
 
-vim.cmd("colorscheme oxocarbon")
-vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+-- Gitsigns with line blames on and column signs hidden
+require('gitsigns').setup {
+  signcolumn = false,
+  current_line_blame = true,
+}
+
+vim.opt.termguicolors = true
+require("bufferline").setup{}
+
+-- Oxocarbon colorscheme with transparency and alternative telescope theme
+vim.g.oxocarbon_lua_transparent = true
+vim.g.oxocarbon_lua_alternative_telescope = true
+vim.cmd.colorscheme 'oxocarbon-lua'

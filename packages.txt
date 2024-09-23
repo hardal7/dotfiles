@@ -44,7 +44,6 @@ ttf-dejavu
 qogir-icon-theme
 zathura-pdf-poppler
 webp-pixbuf-loader
-discord
 kitty
 firefox
 zathura

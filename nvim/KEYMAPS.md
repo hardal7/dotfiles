@@ -1,0 +1,11 @@
+Control + f (Search Files)
+Control + w (Search words)
+Control + c (Close telescope)
+Control + Space (Open Cmp)
+Control + e (Close Cmp)
+Control + a (Accept Cmp Option)
+Control + d (Open Dashboard)
+Control + g (Git Commits)
+Control + s (Git Status)
+Control + c (Comment Line)
+
