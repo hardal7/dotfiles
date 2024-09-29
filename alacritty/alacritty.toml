@@ -33,12 +33,12 @@ white = "#ffffff"
 size = 9.5
 
 [font.normal]
-family = "JetBrains Mono Nerd Font"
+family = "HackNerdFontMono"
 
 [window]
 title = "Terminal"
 decorations = "None"
-opacity = 0.95
+opacity = 0.97
 
 [window.padding]
 x = 10
