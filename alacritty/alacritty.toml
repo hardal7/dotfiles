@@ -1,8 +1,8 @@
-[shell]
-program = "/bin/bash"
+[terminal.shell]
+program = "/bin/zsh"
 
 [colors.primary]
-background = "#161616"
+background = "#040404"
 foreground = "#ffffff"
 
 [colors.search]
@@ -33,16 +33,16 @@ white = "#ffffff"
 size = 9.5
 
 [font.normal]
-family = "HackNerdFontMono"
+family = "JetBrainsMonoNerdFont"
 
 [window]
 title = "Terminal"
 decorations = "None"
-opacity = 0.97
+opacity = 0.90
 
 [window.padding]
-x = 10
-y = 5
+x = 15
+y = 7
 
 [cursor.style]
 blinking = "On"

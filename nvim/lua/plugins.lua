@@ -30,11 +30,10 @@ local plugins = {
   "nvim-treesitter/nvim-treesitter",
   "terrortylor/nvim-comment",
   "Dich0tomy/oxocarbon-lua.nvim",
-  "norcalli/nvim-colorizer.lua",
   "onsails/lspkind.nvim",
   "lewis6991/gitsigns.nvim",
   "airblade/vim-rooter",
-  "akinsho/bufferline.nvim",
+  --"nvim-lualine/lualine.nvim",
 
   {
     "lukas-reineke/indent-blankline.nvim",
@@ -92,13 +91,14 @@ local plugins = {
       {'hrsh7th/cmp-nvim-lsp'},
       {'L3MON4D3/LuaSnip'}
     }
-  }
+  },
+
+  {'nvim-flutter/flutter-tools.nvim'}
 }
 
 require('lazy').setup(plugins)
 require('nvim_comment').setup()
 require('ibl').setup{exclude={filetypes={"dashboard"},}}
-require('colorizer').setup()
 
 require'nvim-treesitter.configs'.setup {
   ensure_installed = {"bash", "c", "cpp", "dockerfile", "glsl", "make", "objdump", "sql", "go", "ruby", "lua", "python", "html", "css", "javascript"},
@@ -111,12 +111,15 @@ end)
 require('mason').setup()
 require('mason-lspconfig').setup({
   handlers = {lsp_zero.default_setup},
-  ensure_installed = {"clangd", "bashls", "cssls", "html", "dockerls", "gopls", "pylsp", "ruby_lsp", "lua_ls", "sqls"},
+  ensure_installed = {"clangd", "bashls", "cssls", "html", "dockerls", "gopls", "pylsp", "lua_ls"},
   -- settings = { gopls = {completeUnimported = true }}
 })
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
 require('cmp').setup {
+  sources = {
+    { name = 'nvim_lsp' },  -- LSP source
+  },
   formatting = {
     format = function(_, vim_item)
       vim_item.kind = (cmp_kinds[vim_item.kind] or '') .. vim_item.kind
@@ -129,6 +132,7 @@ require('cmp').setup {
   },
   window = {
     completion = {
+      winhighlight = 'Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None',  -- Styling
       scrollbar = false,
     },
   },
@@ -178,16 +182,26 @@ require('telescope').setup({
   -- other configuration values here
 })
 
+-- require('lualine').setup({
+    -- sections = {
+        -- lualine_x = {
+            -- 'filetype'
+        -- }
+    -- }
+-- })
+
 -- Gitsigns with line blames on and column signs hidden
 require('gitsigns').setup {
   signcolumn = false,
   current_line_blame = true,
 }
 
-vim.opt.termguicolors = true
-require("bufferline").setup{}
+require("flutter-tools").setup {}
 
 -- Oxocarbon colorscheme with transparency and alternative telescope theme
 vim.g.oxocarbon_lua_transparent = true
 vim.g.oxocarbon_lua_alternative_telescope = true
 vim.cmd.colorscheme 'oxocarbon-lua'
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })

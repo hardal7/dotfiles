@@ -28,6 +28,8 @@ opt.incsearch = true
 opt.ignorecase = true
 opt.hlsearch = false
 
+vim.api.nvim_set_hl(0,"TelescopeNormal",{bg="none"})
+
 -- Hide errors
 vim.diagnostic.config({
   virtual_text = false,
