@@ -8,7 +8,6 @@ sudo -u hardal bash -c 'cd ~ && git clone https://aur.archlinux.org/yay-bin.git 
 
 echo -e "\033[0;31mInstalling packages...\033[0m"
 sudo -u hardal bash -c 'cat packages.txt | yay -S --noconfirm --needed -' 
-echo -e '[Icon Theme]\nInherits=Qogir' > /usr/share/icons/default/index.theme
 sudo -u hardal bash -c 'mv zshrc ../.zshrc && mv zshenv ../.zshenv'
 
 echo -e "\033[0;31mEnabling services...\033[0m"

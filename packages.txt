@@ -1,7 +1,6 @@
 base-devel
 acpi
 brightnessctl
-ufw
 mesa
 hyprland
 swaybg
@@ -13,15 +12,7 @@ cliphist
 alsa-utils
 asoundconf
 pulseaudio-alsa
-mpd
-mpdris2
-aerc
-ncmpcpp
-sptlrx
-cava
-irssi
 fastfetch
-bottom
 btop
 htop
 duf
@@ -41,12 +32,8 @@ fzf
 ttf-jetbrains-mono-nerd
 ttf-liberation
 ttf-dejavu
-qogir-icon-theme
-zathura-pdf-poppler
-webp-pixbuf-loader
 alacritty
-firefox
-zathura
+zen-browser
 libreoffice-fresh
 obsidian
 zsh

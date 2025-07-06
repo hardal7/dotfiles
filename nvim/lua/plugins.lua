@@ -92,8 +92,6 @@ local plugins = {
       {'L3MON4D3/LuaSnip'}
     }
   },
-
-  {'nvim-flutter/flutter-tools.nvim'}
 }
 
 require('lazy').setup(plugins)
@@ -195,8 +193,6 @@ require('gitsigns').setup {
   signcolumn = false,
   current_line_blame = true,
 }
-
-require("flutter-tools").setup {}
 
 -- Oxocarbon colorscheme with transparency and alternative telescope theme
 vim.g.oxocarbon_lua_transparent = true
