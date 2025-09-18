@@ -16,12 +16,11 @@ opt.tabstop = 2
 opt.softtabstop = 2
 
 -- Hide bottom and left bar
-opt.showmode = false
+opt.signcolumn = 'no'
 opt.laststatus = 0
 opt.ruler = false
 vim.wo.fillchars='eob: '
-
-opt.signcolumn = 'no'
+vim.wo.relativenumber = true
 
 -- Search settings
 opt.incsearch = true
@@ -30,7 +29,7 @@ opt.hlsearch = false
 
 vim.api.nvim_set_hl(0,"TelescopeNormal",{bg="none"})
 
--- Hide errors
+-- Show errors
 vim.diagnostic.config({
-  virtual_text = false,
+  virtual_text = true,
 })

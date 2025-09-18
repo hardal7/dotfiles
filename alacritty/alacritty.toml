@@ -11,9 +11,9 @@ matches = {foreground = "#161616", background = '#ee5396'}
 [colors.normal]
 black = "#262626"
 green = "#ff7eb6"
-red =  "#42be65"
+red = "#33b1ff"
 yellow = "#ffe97b"
-blue = "#33b1ff"
+blue = "#673ab7"
 magenta = "#ee5396"
 cyan = "#3ddbd9"
 white = "#dde1e6"
@@ -23,11 +23,10 @@ black = "#393939"
 green = "#ff7eb6"
 red = "#42be65"
 yellow = "#ffe97b"
-blue = "#33b1ff"
+blue = "#673ab7"
 magenta = "#ee5396"
 cyan = "#3ddbd9"
 white = "#ffffff"
-
 
 [font]
 size = 9.5
@@ -38,11 +37,11 @@ family = "JetBrainsMonoNerdFont"
 [window]
 title = "Terminal"
 decorations = "None"
-opacity = 0.90
+opacity = 1.0
 
 [window.padding]
-x = 15
-y = 7
+x = 10
+y = 10
 
 [cursor.style]
 blinking = "On"

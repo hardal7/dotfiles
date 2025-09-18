@@ -1,18 +1,17 @@
 #!/bin/bash
 
 echo -e "\033[0;31mUpdating system files...\033[0m"
-pacman -Syyu --noconfirm
+sudo pacman -Syyu --noconfirm
 
-echo -e "\033[0;31mInstalling yay...\033[0m"
-sudo -u hardal bash -c 'cd ~ && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si --noconfirm && cd ~ && rm -rf yay-bin'
+echo -e '\033[0;31mInstalling packages...\033[0m'
+sudo -u hardal bash -c 'cat packages.txt | pacman -S --noconfirm --needed -' 
 
-echo -e "\033[0;31mInstalling packages...\033[0m"
-sudo -u hardal bash -c 'cat packages.txt | yay -S --noconfirm --needed -' 
-sudo -u hardal bash -c 'mv zshrc ../.zshrc && mv zshenv ../.zshenv'
+echo -e '\033[0;Configuring system...\033[0m'
+bash -c 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"'
+bash -c 'wget https://github.com/zen-browser/desktop/releases/latest/download/zen.linux-x86_64.tar.xz'
+bash -c 'tar -xvf zen.linux-x86-64.tar.xz && rm zen.linux-x86-64.tar.xz && mv zen ~/zen'
+bash -c 'cp kat.sh ~/kat.sh && cp zshrc ../.zshrc && cp zshenv ../.zshenv'
+bash -c 'mkdir ~/Pictures'
 
 echo -e "\033[0;31mEnabling services...\033[0m"
-systemctl enable sshd NetworkManager
-
-#After install: 
-# move chrome folder
-# asoundconf list
+sudo systemctl enable sshd NetworkManager

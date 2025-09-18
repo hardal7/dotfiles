@@ -18,9 +18,8 @@ keymap("n", "<Leader>th", ":Telescope colorscheme<Enter>", opts)
 
 -- Plugins
 keymap("n", "<Leader>ct", ":ColorizerToggle<Enter>", opts)
-keymap("n", "<C-d>", ":Dashboard<Enter>", opts)
+keymap("n", "<C-a>", ":Dashboard<Enter>", opts)
 keymap("n", "<C-c>", ":CommentToggle<Enter>", opts)
 keymap("n", "<Tab>", ":BufferNext<Enter>", opts)
 keymap("n", "<S-Tab>", ":BufferPrevious<Enter>", opts)
 keymap("n", "<C-x>", ":bdelete<Enter>", opts)
-

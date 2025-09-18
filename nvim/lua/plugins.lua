@@ -1,39 +1,13 @@
-local cmp_kinds = {
-  Text = '  ',
-  Method = '  ',
-  Function = '  ',
-  Constructor = '  ',
-  Field = '  ',
-  Variable = '  ',
-  Class = '  ',
-  Interface = '  ',
-  Module = '  ',
-  Property = '  ',
-  Unit = '  ',
-  Value = '  ',
-  Enum = '  ',
-  Keyword = '  ',
-  Snippet = '  ',
-  Color = '  ',
-  File = '  ',
-  Reference = '  ',
-  Folder = '  ',
-  EnumMember = '  ',
-  Constant = '  ',
-  Struct = '  ',
-  Event = '  ',
-  Operator = '  ',
-  TypeParameter = '  ',
-}
-
 local plugins = {
   "nvim-treesitter/nvim-treesitter",
   "terrortylor/nvim-comment",
   "Dich0tomy/oxocarbon-lua.nvim",
   "onsails/lspkind.nvim",
   "lewis6991/gitsigns.nvim",
+  "norcalli/nvim-colorizer.lua",
   "airblade/vim-rooter",
-  --"nvim-lualine/lualine.nvim",
+  "karb94/neoscroll.nvim",
+  "folke/trouble.nvim",
 
   {
     "lukas-reineke/indent-blankline.nvim",
@@ -47,7 +21,7 @@ local plugins = {
   },
 
   {
-    "nvim-telescope/telescope.nvim", 
+    "nvim-telescope/telescope.nvim",
     tag='0.1.4',
     dependencies = {'nvim-lua/plenary.nvim', 'nvim-tree/nvim-web-devicons'}
   },
@@ -59,7 +33,7 @@ local plugins = {
       require('dashboard').setup {config={
         footer={
           "                               ",
-          "You are what you repeatedly do."}, 
+          "You are what you repeatedly do."},
         header={
           "           __..--''``---....___   _..._    __          ",
           "/// //_.-'    .-/\";  `        ``<._  ``.''_ `. / // / ",
@@ -94,6 +68,34 @@ local plugins = {
   },
 }
 
+local cmp_kinds = {
+  Text = '  ',
+  Method = '  ',
+  Function = '  ',
+  Constructor = '  ',
+  Field = '  ',
+  Variable = '  ',
+  Class = '  ',
+  Interface = '  ',
+  Module = '  ',
+  Property = '  ',
+  Unit = '  ',
+  Value = '  ',
+  Enum = '  ',
+  Keyword = '  ',
+  Snippet = '  ',
+  Color = '  ',
+  File = '  ',
+  Reference = '  ',
+  Folder = '  ',
+  EnumMember = '  ',
+  Constant = '  ',
+  Struct = '  ',
+  Event = '  ',
+  Operator = '  ',
+  TypeParameter = '  ',
+}
+
 require('lazy').setup(plugins)
 require('nvim_comment').setup()
 require('ibl').setup{exclude={filetypes={"dashboard"},}}
@@ -109,8 +111,8 @@ end)
 require('mason').setup()
 require('mason-lspconfig').setup({
   handlers = {lsp_zero.default_setup},
-  ensure_installed = {"clangd", "bashls", "cssls", "html", "dockerls", "gopls", "pylsp", "lua_ls"},
-  -- settings = { gopls = {completeUnimported = true }}
+  ensure_installed = {"clangd", "bashls", "html", "dockerls", "gopls", "pylsp", "lua_ls"},
+  settings = { gopls = {completeUnimported = true }}
 })
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
@@ -173,26 +175,16 @@ require('telescope').setup({
   defaults = {
     layout_config = {
       vertical = { width = 0.2 }
-      -- other layout configuration here
     },
-    -- other defaults configuration here
   },
-  -- other configuration values here
 })
 
--- require('lualine').setup({
-    -- sections = {
-        -- lualine_x = {
-            -- 'filetype'
-        -- }
-    -- }
--- })
-
--- Gitsigns with line blames on and column signs hidden
 require('gitsigns').setup {
   signcolumn = false,
   current_line_blame = true,
 }
+
+require('neoscroll').setup();
 
 -- Oxocarbon colorscheme with transparency and alternative telescope theme
 vim.g.oxocarbon_lua_transparent = true

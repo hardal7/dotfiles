@@ -15,6 +15,7 @@ map e
 map f
 map g
 map z
+map <enter>
 
 map . set hidden!
 map dd delete
@@ -22,7 +23,6 @@ map p paste
 map x cut
 map y copy
 map c clear
-map <enter> open
 map mf :push %touch<space>
 map md :push %mkdir<space>
 map r rename
