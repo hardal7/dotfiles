@@ -1,6 +1,6 @@
 export ZSH="$HOME/.oh-my-zsh"
 export DISPLAY=":1"
-export PATH=$PATH:/home/hardal/.local/bin/tools:/home/hardal/go/bin
+export PATH=$PATH:/home/hardal/.local/bin/:/home/hardal/go/bin
 
 plugins=(git)
 
@@ -8,7 +8,9 @@ source $ZSH/oh-my-zsh.sh
 
 alias vim="nvim"
 alias ls="lsd --group-directories-first -l"
+alias cd="zoxide"
 
 autoload -U compinit; compinit
 
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"

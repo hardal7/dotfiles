@@ -66,6 +66,14 @@ local plugins = {
       {'L3MON4D3/LuaSnip'}
     }
   },
+
+  {
+    'wakatime/vim-wakatime',
+    lazy=false,
+    setup = function ()
+      vim.cmd([[packadd wakatime/vim-wakatime]])
+    end
+  },
 }
 
 local cmp_kinds = {
@@ -139,7 +147,7 @@ require('cmp').setup {
   mapping = cmp.mapping.preset.insert({
     ['<C-a>'] = cmp.mapping.confirm({select = false}),
     ['<C-Space>'] = cmp.mapping.complete(),
-    ["<C-e>"] = cmp.mapping.close(),
+    ["<C-c>"] = cmp.mapping.close(),
     ['<C-f>'] = cmp_action.luasnip_jump_forward(),
     ['<C-b>'] = cmp_action.luasnip_jump_backward(),
     ['<C-u>'] = cmp.mapping.scroll_docs(-4),

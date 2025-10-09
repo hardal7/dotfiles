@@ -10,11 +10,9 @@ keymap("i", "<C-k>", "<Up>", opts)
 keymap("i", "<C-l>", "<Right>", opts)
 
 -- Telescope keymaps
-keymap("n", "<C-f>", ":Telescope find_files<Enter>", opts)
+keymap("n", "<C-s>", ":Telescope find_files<Enter>", opts)
 keymap("n", "<C-w>", ":Telescope live_grep<Enter>", opts)
 keymap("n", "<C-g>", ":Telescope git_commits<Enter>", opts)
-keymap("n", "<C-s>", ":Telescope git_status<Enter>", opts)
-keymap("n", "<Leader>th", ":Telescope colorscheme<Enter>", opts)
 
 -- Plugins
 keymap("n", "<Leader>ct", ":ColorizerToggle<Enter>", opts)

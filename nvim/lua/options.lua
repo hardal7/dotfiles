@@ -20,7 +20,7 @@ opt.signcolumn = 'no'
 opt.laststatus = 0
 opt.ruler = false
 vim.wo.fillchars='eob: '
-vim.wo.relativenumber = true
+vim.wo.number = true
 
 -- Search settings
 opt.incsearch = true

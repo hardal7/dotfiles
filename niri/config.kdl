@@ -78,7 +78,7 @@ hotkey-overlay {
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Mod+A hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
+    Mod+A hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty" "-e" "tmux"; }
     Mod+W hotkey-overlay-title="Open a Browser: zen" { spawn "/home/hardal/zen/zen"; }
     Mod+O hotkey-overlay-title="Open a Notepad: obsidian" { spawn "obsidian"; }
 
