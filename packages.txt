@@ -9,13 +9,13 @@ acpi
 brightnessctl
 playerctl
 btop
-htop
 duf
 ncdu
 neovim
 tmux
 zsh
 starship
+bat
 lsd
 lf
 zoxide
@@ -29,6 +29,6 @@ npm
 ripgrep
 fzf
 ttf-jetbrains-mono-nerd
-alacritty
+kitty
 obsidian
-keepassxc
+pass

@@ -1,4 +1,7 @@
-set ratios 1:2:3
+set previewer ~/.config/lf/previewer
+set cleaner ~/.config/lf/cleaner
+
+set ratios 1:1:3
 set icons true
 set hidden false
 set ignorecase true
@@ -32,4 +35,3 @@ map gc cd ~/.config
 
 map o $nvim "$f"
 map z $zathura "$f"
-
