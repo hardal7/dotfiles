@@ -1,13 +1,16 @@
-set previewer ~/.config/lf/previewer
-set cleaner ~/.config/lf/cleaner
-
 set ratios 1:1:3
 set icons true
 set hidden false
 set ignorecase true
 set info size
 
+set previewer ~/.config/lf/previewer
+set cleaner ~/.config/lf/cleaner
+
+cmd trash %trash-put -- $fx
+
 # Unbind defaults
+map p
 map m
 map o
 map n
@@ -18,14 +21,14 @@ map e
 map f
 map g
 map z
+map w
+map i
 map <enter>
 
 map . set hidden!
-map dd delete
-map p paste
 map x cut
-map y copy
-map c clear
+map dd trash
+map p paste
 map mf :push %touch<space>
 map md :push %mkdir<space>
 map r rename
@@ -35,3 +38,30 @@ map gc cd ~/.config
 
 map o $nvim "$f"
 map z $zathura "$f"
+map i $bat --paging always "$f"
+map w $zsh
+
+cmd on-select &{{
+    lf -remote "send $id set statfmt \"$(eza -ld --color=always "$f" | sed 's/\\/\\\\/g;s/"/\\"/g')\""
+}}
+}
+
+cmd paste &{{
+    set -- $(cat ~/.local/share/lf/files)
+    mode="$1"
+    shift
+    case "$mode" in
+        copy)
+            rsync -av --ignore-existing --progress -- "$@" . |
+            stdbuf -i0 -o0 -e0 tr '\r' '\n' |
+            while IFS= read -r line; do
+                line="$(printf '%s' "$line" | sed 's/\\/\\\\/g;s/"/\\"/g')"
+                lf -remote "send $id echo \"$line\""
+            done
+            ;;
+        move)
+            mv -n -- "$@" .
+            lf -remote "send clear"
+            ;;
+    esac
+}}

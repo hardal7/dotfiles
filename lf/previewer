@@ -14,14 +14,7 @@ case "$(file -Lb --mime-type "$file")" in
   image/*)
     draw "$file"
     ;;
-  video/*)
-    # vidthumb is from here:
-    # https://raw.githubusercontent.com/duganchen/kitty-pistol-previewer/main/vidthumb
-    draw "$(vidthumb "$file")"
-    ;;
   text/*)
-    bat --theme=oxocarbon --paging=never --terminal-width $(($2-5)) -f "$1"
+    bat --theme=oxocarbon --paging=never --style=plain -r 0:40 --terminal-width $(($2-5)) -f "$1"
     ;;
 esac
-
-pistol "$file"

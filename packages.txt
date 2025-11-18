@@ -1,34 +1,14 @@
-niri
-sddm
-swaybg
-xwayland-satellite
-openssh
-tor
-docker
-acpi
-brightnessctl
-playerctl
-btop
-duf
-ncdu
-neovim
-tmux
-zsh
-starship
-bat
-lsd
-lf
-zoxide
-base-devel
-make
-cmake
-man-db
-unzip
-wget
-npm
-ripgrep
-fzf
-ttf-jetbrains-mono-nerd
-kitty
-obsidian
-pass
+niri wayland-protocols xdg-desktop-portal-gnome sddm swaybg xwayland-satellite \
+ttf-jetbrains-mono-nerd phinger-cursors \
+openssh tor docker \
+acpi brightnessctl playerctl bluez bluez-utils \
+btop duf ncdu \
+neovim tmux zsh starship \
+bat lf eza zoxide rsync trash-cli \
+man-db cmake unzip wget ripgrep fzf sysfsutils\
+npm go delve rust python-pipx \
+github-cli cava \
+kitty obsidian wine pass \
+netcat \
+wl-clipboard zen-browser-bin sddm-silent-theme-git \
+onefetch gitfetch-python rxfetch lrcget-bin \

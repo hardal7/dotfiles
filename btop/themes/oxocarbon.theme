@@ -1,0 +1,90 @@
+# Main background (leave empty for transparency)
+theme[main_bg]="#040404"
+
+# Main text color
+theme[main_fg]="#ffffff"
+
+# Title color for boxes
+theme[title]="#ffffff"
+
+# Highlight color for keyboard shortcuts
+theme[hi_fg]="#33b1ff"
+
+# Background color of selected item in processes box
+theme[selected_bg]="#ee5396"
+
+# Foreground color of selected item in processes box
+theme[selected_fg]="#ffffff"
+
+# Color of inactive/disabled text
+theme[inactive_fg]="#393939"
+
+# Color of text appearing on top of graphs
+theme[graph_text]="#ffffff"
+
+# Background color of percentage meters
+theme[meter_bg]="#262626"
+
+# Misc colors for processes box
+theme[proc_misc]="#673ab7"
+
+# CPU box outline color
+theme[cpu_box]="#33b1ff"
+
+# Memory/disks box outline color
+theme[mem_box]="#42be65"
+
+# Net up/down box outline color
+theme[net_box]="#ee5396"
+
+# Processes box outline color
+theme[proc_box]="#3ddbd9"
+
+# Box divider line and small boxes line color
+theme[div_line]="#393939"
+
+# Temperature graph colors
+theme[temp_start]="#673ab7"
+theme[temp_mid]="#ee5396"
+theme[temp_end]="#ff7eb6"
+
+# CPU graph colors
+theme[cpu_start]="#673ab7"
+theme[cpu_mid]="#3ddbd9"
+theme[cpu_end]="#42be65"
+
+# Mem/Disk free meter
+theme[free_start]="#ffb6d9"
+theme[free_mid]="#ee5396"
+theme[free_end]="#ff7eb6"
+
+# Mem/Disk cached meter
+theme[cached_start]="#99f0f0"
+theme[cached_mid]="#3ddbd9"
+theme[cached_end]="#33b1ff"
+
+# Mem/Disk available meter
+theme[available_start]="#ffe97b"
+theme[available_mid]="#ffda5b"
+theme[available_end]="#ffcc33"
+
+# Mem/Disk used meter
+theme[used_start]="#84f0a3"
+theme[used_mid]="#42be65"
+theme[used_end]="#2f9c4d"
+
+# Download graph colors
+theme[download_start]="#673ab7"
+theme[download_mid]="#42be65"
+theme[download_end]="#3ddbd9"
+
+# Upload graph colors
+theme[upload_start]="#673ab7"
+theme[upload_mid]="#ee5396"
+theme[upload_end]="#ff7eb6"
+
+# Process box color gradient
+theme[process_start]="#42be65"
+theme[process_mid]="#3ddbd9"
+theme[process_end]="#33b1ff"
+

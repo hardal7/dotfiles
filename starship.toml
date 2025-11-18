@@ -15,45 +15,34 @@ disabled = false
 success_symbol = "[󱞪](bold red)"
 error_symbol = "[✗](bold red)"
 
-# configure directory
 [directory]
 read_only = " "
 truncation_length = 10
 truncate_to_repo = true
-style = "bold italic blue"
+style = "bold italic yellow"
 
 [cmd_duration]
 min_time = 4
-show_milliseconds = true
+show_milliseconds = false
 disabled = false
-style = "bold italic red"
-
-[aws]
-symbol = "  "
-
-[conda]
-symbol = " "
-
-[dart]
-symbol = " "
-
-[docker_context]
-symbol = " "
-format = "via [$symbol$context]($style) "
-style = "blue bold"
-only_with_files = true
-detect_files = ["docker-compose.yml", "docker-compose.yaml", "Dockerfile"]
-detect_folders = []
-disabled = false
-
-[elixir]
-symbol = " "
-
-[elm]
-symbol = " "
+style = "bold red"
 
 [git_branch]
 symbol = " "
+format = "on [$symbol$branch(:$remote_branch)]($style) "
+
+[git_commit]
+format = "[$hash$tag]($style) "
+# datetime_disabled = false
+only_detached = false
+
+[custom.git_date]
+command = "git --no-pager log -1 | head -n 3 | tail -n 1 | cut -c 13-18 | sed 's/[[:space:]]*$//; s/$/ /'"
+style = "bold yellow"
+when = true
+
+[cpp]
+disabled = false
 
 [golang]
 symbol = " "
@@ -114,3 +103,28 @@ symbol = "ﯣ "
 format = "via [ Node.js $version](bold green) "
 detect_files = ["package.json", ".node-version"]
 detect_folders = ["node_modules"]
+
+
+[aws]
+symbol = "  "
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[docker_context]
+symbol = " "
+format = "via [$symbol$context]($style) "
+style = "blue bold"
+only_with_files = true
+detect_files = ["docker-compose.yml", "docker-compose.yaml", "Dockerfile"]
+detect_folders = []
+disabled = false
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "

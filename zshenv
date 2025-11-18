@@ -1,1 +1,0 @@
-/home/hardal/kat.sh
