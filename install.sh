@@ -21,6 +21,9 @@ sudo gpasswd -a mpd hardal
 sudo chmod 710 /home/hardal
 mkdir ~/.local/state/mpd
 
+echo -e "\033[0;31mSetting up DNS...\033[0m"
+sudo rm /etc/resolv.conf && sudo echo "nameserver 9.9.9.9" >> /etc/resolv.conf
+
 echo -e "\033[0;31mEnabling services...\033[0m"
 sudo systemctl enable sddm sshd tor bluetooth mpd.socket
 systemctl enable --user mpd

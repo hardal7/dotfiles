@@ -11,11 +11,8 @@ local plugins = {
 	"Dich0tomy/oxocarbon-lua.nvim",
 	"stevearc/conform.nvim",
 	"nvimdev/dashboard-nvim",
-
-	{
-		"airblade/vim-rooter",
-		Lazy = false,
-	},
+	"notjedi/nvim-rooter.lua",
+	-- "github/copilot.vim",
 
 	{
 		"lukas-reineke/indent-blankline.nvim",
@@ -73,6 +70,16 @@ local plugins = {
 	},
 
 	{
+		"nvim-flutter/flutter-tools.nvim",
+		lazy = false,
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"stevearc/dressing.nvim",
+		},
+		config = true,
+	},
+
+	{
 		"rachartier/tiny-inline-diagnostic.nvim",
 		event = "VeryLazy",
 		priority = 1000,
@@ -104,6 +111,12 @@ local plugins = {
 require("lazy").setup(plugins)
 
 require("nvim_comment").setup()
+
+require("nvim-autopairs").setup()
+
+require("flutter-tools").setup()
+
+require("nvim-rooter").setup({ rooter_patterns = { ".git", "Makefile", "README.md" } })
 
 require("ibl").setup({ exclude = { filetypes = { "dashboard" } } })
 
@@ -153,6 +166,7 @@ require("nvim-treesitter.configs").setup({
 		"sql",
 		"go",
 		"ruby",
+		"dart",
 		"lua",
 		"python",
 		"html",
@@ -190,7 +204,13 @@ require("dashboard").setup({
 
 require("nvim-tree").setup({
 	filters = { custom = { "^\\.git$" } },
+	update_cwd = true,
+	update_focused_file = {
+		enable = true,
+		update_cwd = true,
+	},
 })
+
 local api = require("nvim-tree.api")
 local Event = api.events.Event
 api.events.subscribe(Event.TreeOpen, function()
@@ -206,7 +226,18 @@ require("mason").setup()
 require("mason-lspconfig").setup({
 	handlers = { lsp_zero.default_setup },
 	ensure_installed = { "clangd", "bashls", "html", "dockerls", "gopls", "pylsp", "lua_ls", "stylua" },
-	settings = { gopls = { completeUnimported = true } },
+	settings = {
+		gopls = {
+			completeUnimported = true,
+			usePlaceholders = true,
+			formatting = {
+				gofumpt = true,
+			},
+			analyses = {
+				unusedparams = true,
+			},
+		},
+	},
 })
 
 local cmp = require("cmp")

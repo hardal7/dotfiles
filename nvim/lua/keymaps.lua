@@ -19,6 +19,7 @@ keymap("n", "<C-d>", ":NvimTreeToggle<Enter>", opts)
 -- LSP
 keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
 keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+keymap("n", "<C-k>", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 
 -- Plugins
 keymap("n", "<C-a>", ":Dashboard<Enter>", opts)

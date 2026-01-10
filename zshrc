@@ -19,7 +19,7 @@ alias rm="trash-put "$@""
 
 alias pacman="yay --noconfirm"
 alias orphans="yay -Rns $(pacman -Qdtq)"
-alias fetch="clear && rxfetch"
+alias fetch="neofetch"
 alias clear-cache="sudo rm -rf /var/cache /var/log ~/.cache ~/.cargo ~/.config/go && bat cache --build"
 
 alias gc="cd ~/.config && lf"

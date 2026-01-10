@@ -1,14 +1,14 @@
-niri wayland-protocols xdg-desktop-portal-gnome sddm swaybg xwayland-satellite \
-ttf-jetbrains-mono-nerd phinger-cursors \
-openssh tor docker \
+niri wayland-protocols xdg-desktop-portal-gnome sddm swaybg xwayland-satellite ttf-jetbrains-mono-nerd \
+openssh tor docker docker-compose \
 acpi brightnessctl playerctl bluez bluez-utils \
 btop duf ncdu \
-neovim tmux zsh starship \
+neovim tmux zsh zsh-autosuggestions starship \
 bat lf eza zoxide rsync trash-cli \
-man-db cmake unzip wget ripgrep fzf sysfsutils\
+man-db cmake unzip wget ripgrep fzf sysfsutils bind\
 npm go delve rust python-pipx \
-github-cli cava \
+github-cli neofetch cava \
 kitty obsidian wine pass \
-netcat \
+netcat net-tools qemu\
 wl-clipboard zen-browser-bin sddm-silent-theme-git \
-onefetch gitfetch-python rxfetch lrcget-bin \
+onefetch lrcget-bin \
+jre24-openjdk \
