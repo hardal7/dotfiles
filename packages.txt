@@ -5,7 +5,7 @@ btop duf ncdu \
 neovim tmux zsh zsh-autosuggestions starship \
 bat lf eza zoxide rsync trash-cli \
 man-db cmake unzip wget ripgrep fzf sysfsutils bind\
-npm go delve rust python-pipx \
+npm go delve rust python3 python-pipx \
 github-cli neofetch cava \
 kitty obsidian wine pass \
 netcat net-tools qemu\

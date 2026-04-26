@@ -15,6 +15,7 @@ mkdir ~/Pictures ~/Desktop ~/Downloads
 
 echo -e '\033[0;31mInstalling shell...\033[0m'
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 
 echo -e "\033[0;31mSetting up MPD...\033[0m"
 sudo gpasswd -a mpd hardal 

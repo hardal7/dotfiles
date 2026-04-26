@@ -1,7 +1,7 @@
 local keymap = vim.api.nvim_set_keymap
 local opts = { silent = true }
 
-vim.g.mapleader = " "
+-- vim.g.mapleader = " "
 
 -- Navigate using the hjkl keys in insert mode
 -- keymap("i", "<C-h>", "<Left>", opts)

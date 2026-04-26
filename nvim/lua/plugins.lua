@@ -11,7 +11,7 @@ local plugins = {
 	"Dich0tomy/oxocarbon-lua.nvim",
 	"stevearc/conform.nvim",
 	"nvimdev/dashboard-nvim",
-	"notjedi/nvim-rooter.lua",
+	"DrKJeff16/project.nvim",
 	-- "github/copilot.vim",
 
 	{
@@ -70,6 +70,15 @@ local plugins = {
 	},
 
 	{
+		"teamtype/teamtype-nvim",
+		keys = {
+			{ "<leader>ej", "<cmd>TeamtypeJumpToCursor<cr>" },
+			{ "<leader>ef", "<cmd>TeamtypeFollow<cr>" },
+		},
+		lazy = false,
+	},
+
+	{
 		"nvim-flutter/flutter-tools.nvim",
 		lazy = false,
 		dependencies = {
@@ -116,7 +125,7 @@ require("nvim-autopairs").setup()
 
 require("flutter-tools").setup()
 
-require("nvim-rooter").setup({ rooter_patterns = { ".git", "Makefile", "README.md" } })
+require("project").setup()
 
 require("ibl").setup({ exclude = { filetypes = { "dashboard" } } })
 

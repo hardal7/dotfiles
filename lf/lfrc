@@ -27,13 +27,14 @@ map <enter>
 
 map . set hidden!
 map x cut
-map dd trash
+map dd delete
 map p paste
 map mf :push %touch<space>
 map md :push %mkdir<space>
 map r rename
 
 map gd cd ~/Downloads
+map gp cd ~/Projects
 map gc cd ~/.config
 
 map o $nvim "$f"
